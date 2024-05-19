@@ -1,6 +1,14 @@
+body {
+    background-image: url("forest.webp");
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 0
+}
+
 .container {
     text-align: center;
-    background-image: ;
+    display: grid;
+    align-items: center; 
 }
 
 .board {
@@ -12,11 +20,38 @@
 .cell {
     width: 100px;
     height: 100px;
-    background-color: rgb(220, 226, 247);
+    background-color: rgb(228, 255, 234);
     border: 2px solid #000000;
     font-size: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor:crosshair;
+    cursor: default;
+    border-radius: 10px;
+}
+
+.cell:hover {
+    background-color: rgb(107, 174, 121) 
+}
+
+.status {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-right: 300px;
+}
+
+#restartButton {
+    font-size: 20px;
+    padding: 5px 4px;
+    cursor: default;
+    background-color: rgb(155, 247, 235);
+    border: black;
+    color: black;
+    border-radius: 20px;
+    margin-left: 350px; 
+    margin-right: 20px;
+}
+
+#restartButton:hover {
+    background-color: aquamarine;
 }
