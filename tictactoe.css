@@ -1,0 +1,22 @@
+.container {
+    text-align: center;
+    background-image: ;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(220, 226, 247);
+    border: 2px solid #000000;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:crosshair;
+}
