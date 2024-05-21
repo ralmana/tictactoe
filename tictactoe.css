@@ -1,5 +1,5 @@
 body {
-    background-image: url("forest.webp");
+    background-image: url("jailback.jpeg");
     font-size: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 0
@@ -8,9 +8,15 @@ body {
 .container {
     text-align: center;
     display: grid;
-    align-items: center; 
+    align-items: center;
+
 }
 
+.Below {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -20,7 +26,7 @@ body {
 .cell {
     width: 100px;
     height: 100px;
-    background-color: rgb(228, 255, 234);
+    background-color: rgb(217, 218, 217);
     border: 2px solid #000000;
     font-size: 48px;
     display: flex;
@@ -31,27 +37,29 @@ body {
 }
 
 .cell:hover {
-    background-color: rgb(107, 174, 121) 
+    background-color: rgb(255, 255, 255) 
 }
 
 .status {
     font-size: 30px;
     margin-top: 20px;
-    margin-right: 300px;
+    margin-right: 200px;
+    margin: 0;
+    color: aliceblue;
+    margin-right: 250px;
 }
 
 #restartButton {
     font-size: 20px;
-    padding: 5px 4px;
+    padding: 5px 10px;
     cursor: default;
-    background-color: rgb(155, 247, 235);
+    background-color: rgb(152, 152, 152);
     border: black;
     color: black;
-    border-radius: 20px;
-    margin-left: 350px; 
-    margin-right: 20px;
+    border-radius: 15px; 
+    margin-left: 250px;
 }
 
 #restartButton:hover {
-    background-color: aquamarine;
+    background-color: rgb(225, 225, 225);
 }
