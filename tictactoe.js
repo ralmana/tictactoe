@@ -31,4 +31,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return null;
     };
-    
+    const handleCellClick = (event) => {
+        const clickedCell = event.target;
+        const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+
+        if (gameBoard[clickedCellIndex] !== '' || !gameActive) return;
+
+        gameBoard[clickedCellIndex] = currentPlayer;
+        clickedCell.textContent = currentPlayer;
+
+        const winner = checkWinner();
+        if (winner) {
+            if (winner === 'Tie') {
+                statusDisplay.textContent = 'It\'s a Tie!';
+            } else {
+                statusDisplay.textContent = `Player ${winner} Wins!`;
+            }
+            gameActive = false;
+            return;
+        }
+
+        currentPlayer = currentPlayer === '👮🏻‍♂️' ? '💰🥷' : '👮🏻‍♂️';
+        statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
+    };
+
+    const restartGame = () => {
+        currentPlayer = '👮🏻‍♂️';
+        gameBoard = ['', '', '', '', '', '', '', '', ''];
+        gameActive = true;
+        statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
+        cells.forEach(cell => cell.textContent = '');
+    };
+
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+    restartButton.addEventListener('click', restartGame);
+});
