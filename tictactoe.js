@@ -68,6 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
     restartButton.addEventListener('click', restartGame);
 
-    // Initialize status display
     statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
 });
