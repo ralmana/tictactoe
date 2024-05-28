@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cells = document.querySelectorAll('.cell');
     const statusDisplay = document.getElementById('status');
     const restartButton = document.getElementById('restartButton');
-    let currentPlayer = '👮🏻‍♂️';
+    let player1 = prompt("Player 1: What is your Character's initials?")
+    let player2 = prompt("Player 2: What is your character's initials?");
+    let currentPlayer = player1;
     let gameBoard = ['', '', '', '', '', '', '', '', ''];
     let gameActive = true;
 
@@ -51,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        currentPlayer = currentPlayer === '👮🏻‍♂️' ? '💰🥷' : '👮🏻‍♂️';
+        currentPlayer = currentPlayer === player1 ? player2 : player1;
         statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
     };
 
     const restartGame = () => {
-        currentPlayer = '👮🏻‍♂️';
+        currentPlayer = player1;
         gameBoard = ['', '', '', '', '', '', '', '', ''];
         gameActive = true;
         statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
@@ -65,4 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
     restartButton.addEventListener('click', restartGame);
+
+    // Initialize status display
+    statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
 });
