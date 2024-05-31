@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameBoard[clickedCellIndex] = currentPlayer;
         clickedCell.textContent = currentPlayer;
 
+        clickedCell.style.color = currentPlayer === player1 ? 'blue' : 'red';
         const winner = checkWinner();
         if (winner) {
             if (winner === 'Tie') {
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameActive = true;
         statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
         cells.forEach(cell => cell.textContent = '');
+        cell.style.color = '';
     };
 
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
